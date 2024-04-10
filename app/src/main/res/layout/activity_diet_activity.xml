@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".DietActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/card_back_btn"
+            android:contentDescription="@string/back_text"
+            android:foregroundGravity="center"
+            android:paddingStart="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_icon"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diet Section"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.02"
+            app:layout_constraintStart_toEndOf="@id/back"
+            app:layout_constraintTop_toTopOf="@id/back" />
+
+        <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp"
+        android:layout_margin="20dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Healthy Diet for Skin"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/expand"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:rotation="180"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/name_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <ImageView
+                android:id="@+id/collapse"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/name_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <TextView
+                android:id="@+id/details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="∙Walnut\n∙Avocados\n∙Green Tea\n∙Oily Fish\n∙Tomatoes\n∙Dark Chocolate"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/name_text"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="44dp"
+                android:layout_marginStart="10dp"
+                android:text="Diet for Diabetic Patients"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/expand1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:rotation="180"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <ImageView
+                android:id="@+id/collapse1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <TextView
+                android:id="@+id/details1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The key to eating with diabetes is to eat a variety of healthy foods from all food groups, in the amounts your meal plan outlines.\n
+The food groups are:\n
+∙vegetables- includes broccoli, carrots, greens, peppers, tomatoes, potatoes, corn, and green peas\n
+∙fruits—includes oranges, melon, berries, apples, bananas, and grapes\n
+∙grains\n
+∙protein - lean meat,chicken or turkey without the skin, fish, eggs, nuts and peanuts, dried beans and certain peas, such as chickpeas and split peas, meat substitutes, such as tofu\n
+∙dairy — milk, yogurt, cheese"
+                android:textSize="18sp"
+
+                app:layout_constraintTop_toBottomOf="@id/title1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card1">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="44dp"
+                android:layout_marginStart="10dp"
+                android:text="Foods to Lower Blood Sugar"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/expand2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:rotation="180"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <ImageView
+                android:id="@+id/collapse2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <TextView
+                android:id="@+id/details2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="∙Broccoli and broccoli sprouts\n∙Seafood\n∙Pumpkin and pumpkin seeds\n∙Nuts and nut butter\n∙Beans and lentilsn\∙Kimchi and sauerkraut\n∙Chia seeds\n∙Berries\n∙Avocados\n∙Oats and oat bran\n∙Citrus fruits\n∙Kefir and yogurt\n∙Eggs\n∙Apples"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/title2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card2">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Diet for Cancer Patients"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/expand3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:rotation="180"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <ImageView
+                android:id="@+id/collapse3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <TextView
+                android:id="@+id/details3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foods you should add to your diet during cancer treatment:\n∙Plant-based Proteins\n∙Healthy Fats\n∙Healthy Carbs\n∙Vitamins and Minerals\n\nFoods you should avoid during cancer treatment:\n∙Lightly cooked or raw fish, such as sushi\n∙Soft-cooked eggs or foods that contain raw eggs, such as homemade mayonnaise\n∙Unpasteurized cheeses and dairy products\n∙Unwashed fruits or vegetables\n"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/title3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card3"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title4"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Diet for High Cholestrol Patients"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/expand4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:rotation="180"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <ImageView
+                android:id="@+id/collapse4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/next_text"
+                app:layout_constraintStart_toEndOf="@id/title4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/scroll_up"
+                app:tint="#019267" />
+
+            <TextView
+                android:id="@+id/details4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="∙Oats\n∙Barley and other whole grains\n∙Beans\n∙Nuts\n∙ Vegetable oils\n∙Apples, grapes, strawberries, citrus fruits\n∙Fatty fish\n∙Fiber supplements\n"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/title4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

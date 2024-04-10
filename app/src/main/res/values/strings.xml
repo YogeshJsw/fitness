@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">FitnessApp</string>
+    <string name="description_image">Made In 🇮🇳</string>
+    <string name="zoom_text">zoom</string>
+    <string name="back_text">back</string>
+    <string name="sample_text">This is a sample text</string>
+    <string name="about_text">About</string>
+    <string name="steps_text">Steps</string>
+    <string name="heading_here_text">Heading here</string>
+    <string name="menu_text">menu</string>
+    <string name="hello_text">Hello </string>
+    <string name="fitness_enthusiast_text">fitness enthusiast!</string>
+    <string name="what_yoga_practice_are_you_in_the_mood_for_today_text">What yoga practice are you in the mood for today?</string>
+    <string name="search_yoga_text">🔎 Search Yoga</string>
+    <string name="categories_text">Categories</string>
+    <string name="yoga_text">Yoga</string>
+    <string name="diet_text">Diet</string>
+    <string name="popular_yogas_text">Popular Yogas</string>
+    <string name="search_here_text">Search Here</string>
+    <string name="icon_text">icon</string>
+    <string name="privacy_policy_text">Privacy Policy</string>
+    <string name="about_developer_text">About Developer</string>
+    <string name="next_text">next</string>
+    <string name="img_text">img</string>
+    <string name="gradient_text">gradient</string>
+    <string name="healthy_diet_for_skin_text">Healthy Diet for Skin</string>
+</resources>

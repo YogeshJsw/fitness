@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">FitnessApp</string>
-    <string name="description_image">Made In 🇮🇳</string>
+    <string name="ad_id">ca-app-pub-2095090407853200~6923388920</string>
+    <string name="int_id">ca-app-pub-2095090407853200/1990626448</string>
+    <string name="ban_id">ca-app-pub-2095090407853200/7141180659</string>
+    <string name="rew_id">ca-app-pub-2095090407853200/5630488559</string>
+    <string name="app_name">MyFitness - Home Workout</string>
+    <string name="description_image">Made In 🇮🇳 \n  - Yogesh</string>
     <string name="zoom_text">zoom</string>
     <string name="back_text">back</string>
     <string name="sample_text">This is a sample text</string>

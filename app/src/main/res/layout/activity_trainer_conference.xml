@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9B9999"
-    tools:context=".trainer.TrainerConferenceActivity"
-    android:orientation="vertical">
+    android:background="#E0F7FA"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".trainer.TrainerConferenceActivity">
 
+    <!-- Top Section with Meeting ID and Share Button -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/meeting_id_text_view"
@@ -20,25 +23,31 @@
             android:layout_margin="10dp"
             android:gravity="center"
             android:text="MEETING ID: "
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textColor="#212121"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/share_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginHorizontal="20dp"
+            android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/icon_share" />
+            android:contentDescription="Share Meeting ID"
+            android:src="@drawable/icon_share"
+            app:tint="#3F51B5" />
 
     </RelativeLayout>
 
+    <!-- Container for Fragment -->
     <LinearLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+    </LinearLayout>
 
 </LinearLayout>

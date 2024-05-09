@@ -45,9 +45,24 @@ class HomeActivity : AppCompatActivity() {
 
         auth= FirebaseAuth.getInstance()
 
+        //adds
         MobileAds.initialize(this) {}
         val adRequest=AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
+
+        //network connectivity
+        var checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if (isConnected) {
+                binding.rest.visibility=View.VISIBLE
+                binding.net.visibility = View.GONE
+            } else {
+                binding.rest.visibility=View.GONE
+                binding.net.visibility = View.VISIBLE
+            }
+        }
+
+
 
 
         binding.categoryImg1.setOnClickListener {
@@ -172,6 +187,9 @@ class HomeActivity : AppCompatActivity() {
     fun userLogin(view: View) {
         startActivity(Intent(this@HomeActivity,com.yogeshj.myFitness.user.LoginActivity::class.java))
     }
+
+
+
     private fun initLoadingDialog() {
         dialog = Dialog(this@HomeActivity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)

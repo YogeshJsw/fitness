@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.view.Window
 import android.webkit.WebChromeClient
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
@@ -48,6 +49,14 @@ class FitnessActivity : AppCompatActivity() {
                 mInterstitialAd = interstitialAd
             }
         })
+
+        //Internet Connection Required
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if(!isConnected) {
+                Toast.makeText(this@FitnessActivity,"Please Check your Internet Connection", Toast.LENGTH_LONG).show()
+            }
+        }
 
         //back button
         binding.back.setOnClickListener {

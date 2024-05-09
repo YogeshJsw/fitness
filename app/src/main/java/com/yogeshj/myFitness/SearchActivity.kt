@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.google.android.gms.ads.AdRequest
@@ -40,6 +41,14 @@ class SearchActivity : AppCompatActivity() {
             }
         })
 
+
+        //Internet Connection Required
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if(!isConnected) {
+                Toast.makeText(this@SearchActivity,"Please Check your Internet Connection", Toast.LENGTH_LONG).show()
+            }
+        }
 
 
         binding.search.requestFocus()

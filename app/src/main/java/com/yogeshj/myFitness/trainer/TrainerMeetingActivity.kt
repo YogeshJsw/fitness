@@ -16,6 +16,7 @@ import android.widget.DatePicker
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.TimePicker
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.ads.AdRequest
@@ -30,6 +31,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.yogeshj.myFitness.CheckNetworkConnection
 import com.yogeshj.myFitness.HomeActivity
 import com.yogeshj.myFitness.PaymentData
 import com.yogeshj.myFitness.R
@@ -96,12 +98,23 @@ class TrainerMeetingActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
             }
         })
 
+
+        //Internet Connection Required
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if(!isConnected) {
+                Toast.makeText(this@TrainerMeetingActivity,"Please Check your Internet Connection", Toast.LENGTH_LONG).show()
+            }
+        }
+
+
         var paymentTaskComplete = false
         var trainersTaskComplete = false
 
 
         val currentDate = LocalDate.now()
         val currentTime=LocalTime.now()
+
 
 //        Log.d("currentTime","${currentTime}")
         var count=0

@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.yogeshj.myFitness.CheckNetworkConnection
 import com.yogeshj.myFitness.HomeActivity
 import com.yogeshj.myFitness.R
 import com.yogeshj.myFitness.databinding.ActivityLogin2Binding
@@ -75,11 +76,26 @@ class LoginActivity : AppCompatActivity() {
             hideLoading()
         }
 
+
+        //Internet Status
+        var isNetworkConnected = false
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            isNetworkConnected = isConnected
+        }
+
         binding.btnLogin.setOnClickListener {
             showLoading()
+
+            if (!isNetworkConnected) {
+                hideLoading()
+                Toast.makeText(this@LoginActivity, "Please check your Internet Connection.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+
             val email = binding.emailLogin.text.toString()
             val password = binding.passwordLogin.text.toString()
-
 
             if (email.isEmpty() || password.isEmpty()) {
                 hideLoading()

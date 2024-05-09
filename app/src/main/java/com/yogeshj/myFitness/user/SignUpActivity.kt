@@ -7,12 +7,14 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
+import android.widget.Toast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.yogeshj.myFitness.CheckNetworkConnection
 import com.yogeshj.myFitness.HomeActivity
 import com.yogeshj.myFitness.R
 import com.yogeshj.myFitness.databinding.ActivitySignUpBinding
@@ -45,8 +47,22 @@ class SignUpActivity : AppCompatActivity() {
             hideLoading()
         }
 
+        //Internet Status
+        var isNetworkConnected = false
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            isNetworkConnected = isConnected
+        }
+
         binding.btnSignUp.setOnClickListener {
             showLoading()
+
+            if (!isNetworkConnected) {
+                hideLoading()
+                Toast.makeText(this@SignUpActivity, "Please check your Internet Connection.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
             val name = binding.nameRegister.text.toString()
             val email = binding.emailRegister.text.toString()
             val password = binding.passwordRegister.text.toString()

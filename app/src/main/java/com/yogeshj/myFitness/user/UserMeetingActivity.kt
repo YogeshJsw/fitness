@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
+import android.widget.Toast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
@@ -18,6 +19,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.yogeshj.myFitness.CheckNetworkConnection
 import com.yogeshj.myFitness.HomeActivity
 import com.yogeshj.myFitness.PaymentData
 import com.yogeshj.myFitness.R
@@ -60,6 +62,14 @@ class UserMeetingActivity : AppCompatActivity() {
                 mInterstitialAd = interstitialAd
             }
         })
+
+        //Internet Connection Required
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if(!isConnected) {
+                Toast.makeText(this@UserMeetingActivity,"Please Check your Internet Connection", Toast.LENGTH_LONG).show()
+            }
+        }
 
         sharedPreferences = getSharedPreferences("name_pref", MODE_PRIVATE)
         binding.nameInput.setText(sharedPreferences.getString("name", ""))

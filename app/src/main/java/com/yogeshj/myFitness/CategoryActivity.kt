@@ -6,7 +6,9 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.Window
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.google.android.gms.ads.AdRequest
@@ -36,6 +38,8 @@ class CategoryActivity : AppCompatActivity() {
         MobileAds.initialize(this@CategoryActivity) {}
 
 
+
+
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
 
@@ -52,6 +56,14 @@ class CategoryActivity : AppCompatActivity() {
         })
 
         initLoadingDialog()
+
+        //Internet Connection Required
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if(!isConnected) {
+                Toast.makeText(this@CategoryActivity,"Please Check your Internet Connection",Toast.LENGTH_LONG).show()
+            }
+        }
 
         binding.back.setOnClickListener {
             if (mInterstitialAd != null) {

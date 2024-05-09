@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.razorpay.PaymentResultWithDataListener
+import com.yogeshj.myFitness.CheckNetworkConnection
 import com.yogeshj.myFitness.HomeActivity
 import com.yogeshj.myFitness.PaymentData
 import com.yogeshj.myFitness.databinding.ActivityUserMainBinding
@@ -65,6 +66,14 @@ class UserMainActivity : AppCompatActivity(), PaymentResultWithDataListener {
             }
         })
 
+
+        //Internet Connection Required
+        val checkNetworkConnection = CheckNetworkConnection(application)
+        checkNetworkConnection.observe(this) { isConnected ->
+            if(!isConnected) {
+                Toast.makeText(this@UserMainActivity,"Please Check your Internet Connection", Toast.LENGTH_LONG).show()
+            }
+        }
 
         binding.back.setOnClickListener {
             if (mInterstitialAd != null) {
